@@ -5,6 +5,7 @@ import java.io.StringWriter;
 import static org.junit.Assert.assertEquals;
 
 public class PuzzleUnitTests {
+
     @Test
     public void testConstructor() {
         Board b = new Board("023145678");
@@ -16,6 +17,7 @@ public class PuzzleUnitTests {
         assertEquals(b.toString(), writer.toString());
         pw.close();
     }
+
     @Test
     public void testConstructor2() {
         Board b = new Board("123485670");
