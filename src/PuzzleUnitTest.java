@@ -3,6 +3,7 @@ import org.junit.Test;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;
+import java.util.List;
 
 public class PuzzleUnitTest {
 
@@ -29,5 +30,25 @@ public class PuzzleUnitTest {
         Assert.assertEquals(b.toString(), writer.toString());
         pw.close();
     }
+
+    @Test
+    public void testIsGoal(){
+        Board goal = new Board("023145678");
+        Board b1 = new Board("123485670");
+        Board b2 = new Board("023145678");
+        Assert.assertFalse(b1.isGoal(goal));
+        Assert.assertTrue(b2.isGoal(goal));
+    }
+
+    @Test
+    public void testListChildren() {
+        Board b = new Board("023145678");
+        List<Ilayout> BChildren = b.children();
+        for (Ilayout child : BChildren) {
+            Assert.assertEquals(child.toString(), "12");
+            Assert.assertEquals(child.toString(), "");
+        }
+    }
+
 
 }

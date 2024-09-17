@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="88255bd2-0ed7-41d0-a987-474d604e15b6" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PuzzleUnitTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PuzzleUnitTest.java" afterDir="false" />
+    </list>
+    <list id="b850625a-8dbe-4a2f-95af-b68c9ec2bce0" name="Changes by NIGGERNIGGERNIGGER" comment="">
+      <change beforePath="$PROJECT_DIR$/src/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Board.java" afterDir="false" />
+    </list>
+    <list id="90890bc3-c2b8-4727-bc82-527e021bdd28" name="Changes by User" comment="">
+      <change beforePath="$PROJECT_DIR$/src/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/PuzzleUnitTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PuzzleUnitTest.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="LineStatusTrackerManager">
+    <file path="$PROJECT_DIR$/src/Board.java">
+      <ranges>
+        <range start1="0" end1="0" start2="0" end2="1" changelist="88255bd2-0ed7-41d0-a987-474d604e15b6" />
+        <range start1="24" end1="26" start2="25" end2="38" changelist="b850625a-8dbe-4a2f-95af-b68c9ec2bce0" />
+        <range start1="35" end1="35" start2="47" end2="49" changelist="88255bd2-0ed7-41d0-a987-474d604e15b6" />
+        <range start1="44" end1="45" start2="58" end2="101" changelist="90890bc3-c2b8-4727-bc82-527e021bdd28" />
+        <range start1="49" end1="50" start2="105" end2="106" changelist="88255bd2-0ed7-41d0-a987-474d604e15b6" />
+        <range start1="54" end1="55" start2="110" end2="111" changelist="88255bd2-0ed7-41d0-a987-474d604e15b6" />
+      </ranges>
+    </file>
+    <file path="$PROJECT_DIR$/src/PuzzleUnitTest.java">
+      <ranges>
+        <range start1="5" end1="5" start2="5" end2="6" changelist="90890bc3-c2b8-4727-bc82-527e021bdd28" />
+        <range start1="31" end1="31" start2="32" end2="52" changelist="88255bd2-0ed7-41d0-a987-474d604e15b6" />
+      </ranges>
+    </file>
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 3
+}</component>
+  <component name="ProjectId" id="2m4l1SFzgyjwHmyH16rKPY8RyC0" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "JUnit.PuzzleUnitTest.executor": "Run",
+    "JUnit.PuzzleUnitTest.testIsGoal.executor": "Run",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="PuzzleUnitTest.testIsGoal" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="IAProjeto1" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="PuzzleUnitTest" />
+      <option name="METHOD_NAME" value="testIsGoal" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.PuzzleUnitTest.testIsGoal" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9f38398b9061-18abd8497189-intellij.indexing.shared.core-IU-241.14494.240" />
+        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-IU-241.14494.240" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="88255bd2-0ed7-41d0-a987-474d604e15b6" name="Changes" comment="" />
+      <created>1726343515704</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1726343515704</updated>
+      <workItem from="1726343517794" duration="849000" />
+      <workItem from="1726477031622" duration="166000" />
+      <workItem from="1726518849775" duration="6040000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

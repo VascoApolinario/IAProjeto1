@@ -1,3 +1,4 @@
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
@@ -22,8 +23,19 @@ public class Board implements Ilayout, Cloneable{
     }
 
     public String toString(){
-        //TODO
-        return null;
+        StringBuilder s = new StringBuilder();
+        for(int i = 0; i < 3; i++)
+        {
+            for(int j = 0; j <3; j++)
+            {
+                if(this.board[i][j] == 0)
+                    s.append(" ");
+                else
+                    s.append(this.board[i][j]);
+            }
+            s.append('\n');
+        }
+        return s.toString();
     }
 
 
@@ -34,6 +46,8 @@ public class Board implements Ilayout, Cloneable{
         return Objects.deepEquals(board, board1.board);
     }
 
+
+
     @Override
     public int hashCode() {
         return Arrays.deepHashCode(board);
@@ -42,16 +56,58 @@ public class Board implements Ilayout, Cloneable{
 
     @Override
     public List<Ilayout> children() {
-        return List.of();
+        List<Ilayout> children=new ArrayList<>();
+        int zero_row = -1;
+        int zero_col = -1;
+        int[] offsets = {-1,1};
+        //Board A = new Board();
+        //Find 0 coordinates
+        for (int i = 0; i < this.board.length; i++) {
+            for (int j = 0; j < this.board[i].length; j++) {
+                if(this.board[i][j] == 0) {
+                    zero_row = i;
+                    zero_col = j;
+                    break;
+                }
+            }
+        }
+        if(zero_row == -1){
+            return null;
+        }
+        for (int offset : offsets) {
+            if ((zero_row + offset < dim) && (zero_row + offset >= 0)) {
+                try {
+                    Board A = (Board) this.clone();
+                    int temp = this.board[zero_row + offset][zero_col];
+                    this.board[zero_row + offset][zero_col] = 0;
+                    this.board[zero_row][zero_col] = temp;
+                    children.add(A);
+                } catch (CloneNotSupportedException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+            if ((zero_col + offset < dim) && (zero_col + offset >= 0)) {
+                try {
+                    Board B = (Board) this.clone();
+                    int temp = this.board[zero_row][zero_col + offset];
+                    this.board[zero_row][zero_col + offset] = 0;
+                    this.board[zero_row][zero_col] = temp;
+                    children.add(B);
+                } catch (CloneNotSupportedException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+        }
+        return children;
     }
 
     @Override
     public boolean isGoal(Ilayout l) {
-        return false;
+        return this.equals(l);
     }
 
     @Override
     public double getG() {
-        return 0;
+        return 1;
     }
 }
