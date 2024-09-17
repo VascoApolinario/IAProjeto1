@@ -46,7 +46,15 @@ public class Board implements Ilayout, Cloneable{
         return Objects.deepEquals(board, board1.board);
     }
 
-
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        Board cloned = (Board) super.clone();
+        cloned.board = new int[dim][dim];
+        for (int i = 0; i < dim; i++) {
+            cloned.board[i] = Arrays.copyOf(this.board[i], dim);
+        }
+        return cloned;
+    }
 
     @Override
     public int hashCode() {
@@ -75,29 +83,32 @@ public class Board implements Ilayout, Cloneable{
             return null;
         }
         for (int offset : offsets) {
-            if ((zero_row + offset < dim) && (zero_row + offset >= 0)) {
+            if ((zero_col + offset < dim) && (zero_col + offset >= 0)) {
                 try {
                     Board A = (Board) this.clone();
-                    int temp = this.board[zero_row + offset][zero_col];
-                    this.board[zero_row + offset][zero_col] = 0;
-                    this.board[zero_row][zero_col] = temp;
+                    int temp = A.board[zero_row][zero_col + offset];
+                    A.board[zero_row][zero_col + offset] = 0;
+                    A.board[zero_row][zero_col] = temp;
                     children.add(A);
                 } catch (CloneNotSupportedException e) {
                     throw new RuntimeException(e);
                 }
             }
-            if ((zero_col + offset < dim) && (zero_col + offset >= 0)) {
+        }
+        for (int offset : offsets) {
+            if ((zero_row + offset < dim) && (zero_row + offset >= 0)) {
                 try {
                     Board B = (Board) this.clone();
-                    int temp = this.board[zero_row][zero_col + offset];
-                    this.board[zero_row][zero_col + offset] = 0;
-                    this.board[zero_row][zero_col] = temp;
+                    int temp = B.board[zero_row + offset][zero_col];
+                    B.board[zero_row + offset][zero_col] = 0;
+                    B.board[zero_row][zero_col] = temp;
                     children.add(B);
                 } catch (CloneNotSupportedException e) {
                     throw new RuntimeException(e);
                 }
             }
         }
+
         return children;
     }
 

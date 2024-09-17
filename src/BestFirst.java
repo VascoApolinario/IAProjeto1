@@ -51,13 +51,39 @@ public class BestFirst {
         return sucs;
     }
 
+    public Iterator<State> getLineage(State a) {
+        List<State> ancestors = new ArrayList<>();
+        while(a.father != null) {
+            ancestors.add(a);
+            a = a.father;
+        }
+        ancestors.add(a);
+        ancestors = ancestors.reversed();
+        return ancestors.iterator();
+    }
+
     final public Iterator<State> solve(Ilayout s, Ilayout goal){
         objective = goal;
         abertos = new PriorityQueue<>(10,(s1,s2) -> (int) Math.signum(s1.getG() - s2.getG()));
         fechados = new HashMap<>();
         abertos.add(new State(s, null));
         List<State> sucs;
-        //TO BE COMPLETED
+        while(!abertos.isEmpty())
+        {
+            actual = abertos.remove();
+            if (actual.layout.isGoal(objective)) {
+                return getLineage(actual);
+            }
+            else {
+                sucs = sucessores(actual);
+                fechados.put(actual.layout,actual);
+                for(State suc : sucs){
+                    if (!fechados.containsKey(suc.layout)) {
+                        abertos.add(new State(suc.layout,actual));
+                    }
+                }
+            }
+        }
         return null;
     }
 }

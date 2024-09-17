@@ -43,12 +43,30 @@ public class PuzzleUnitTest {
     @Test
     public void testListChildren() {
         Board b = new Board("023145678");
+
+        Board b1 = new Board("203145678");
+        Board b2 = new Board("123045678");
         List<Ilayout> BChildren = b.children();
         for (Ilayout child : BChildren) {
-            Assert.assertEquals(child.toString(), "12");
-            Assert.assertEquals(child.toString(), "");
+            Assert.assertTrue(child.isGoal(b1) || child.isGoal(b2));
+        }
+
+        Board a = new Board("123405678");
+        Board a1 = new Board("123450678");
+        Board a2 = new Board("123045678");
+        Board a3 = new Board("103425678");
+        Board a4 = new Board("123475608");
+
+        List<Ilayout> AChildren = a.children();
+        for (Ilayout child : AChildren) {
+            Assert.assertTrue(child.isGoal(a1) || child.isGoal(a2) || child.isGoal(a3) || child.isGoal(a4));
         }
     }
 
+    @Test
+    public void testG() {
+        Board A = new Board("123450678");
+        Assert.assertTrue(A.getG() == 1);
+    }
 
 }
