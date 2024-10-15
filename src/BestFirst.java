@@ -58,15 +58,17 @@ public class BestFirst {
             a = a.father;
         }
         ancestors.add(a);
-        ancestors = ancestors.reversed();
+        Collections.reverse(ancestors);
         return ancestors.iterator();
     }
 
     final public Iterator<State> solve(Ilayout s, Ilayout goal){
         objective = goal;
         abertos = new PriorityQueue<>(10,(s1,s2) -> (int) Math.signum(s1.getG() - s2.getG()));
+        Map<Ilayout,State> abertosMap = new HashMap<>();
         fechados = new HashMap<>();
         abertos.add(new State(s, null));
+        abertosMap.put(s, abertos.peek());
         List<State> sucs;
         while(!abertos.isEmpty())
         {
@@ -75,13 +77,18 @@ public class BestFirst {
                 return getLineage(actual);
             }
             else {
-                sucs = sucessores(actual);
-                fechados.put(actual.layout,actual);
-                for(State suc : sucs){
-                    if (!fechados.containsKey(suc.layout)) {
-                        abertos.add(new State(suc.layout,actual));
+                if (!fechados.containsKey(actual.layout)) {
+                    sucs = sucessores(actual);
+                    fechados.put(actual.layout,actual);
+                    abertosMap.remove(actual.layout);
+                    for(State suc : sucs){
+                        if (!fechados.containsKey(suc.layout) && !abertosMap.containsKey(suc.layout)) {
+                            abertos.add(suc);
+                            abertosMap.put(suc.layout,suc);
+                        }
                     }
                 }
+
             }
         }
         return null;

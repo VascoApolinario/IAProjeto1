@@ -6,48 +6,28 @@
   <component name="ChangeListManager">
     <list default="true" id="88255bd2-0ed7-41d0-a987-474d604e15b6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IAProjeto1/BestFirst.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IAProjeto1/BestFirst.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IAProjeto1/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IAProjeto1/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/BestFirst.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BestFirst.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Board.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PuzzleUnitTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PuzzleUnitTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <list id="b850625a-8dbe-4a2f-95af-b68c9ec2bce0" name="Changes by NIGGERNIGGERNIGGER" comment="" />
-    <list id="90890bc3-c2b8-4727-bc82-527e021bdd28" name="Changes by User" comment="">
-      <change beforePath="$PROJECT_DIR$/src/BestFirst.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BestFirst.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Board.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/PuzzleUnitTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/PuzzleUnitTest.java" afterDir="false" />
-    </list>
+    <list id="90890bc3-c2b8-4727-bc82-527e021bdd28" name="Changes by User" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="JUnit5 Test Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/src/Board.java">
-      <ranges>
-        <range start1="48" end1="49" start2="48" end2="57" changelist="90890bc3-c2b8-4727-bc82-527e021bdd28" />
-        <range start1="76" end1="76" start2="84" end2="97" changelist="88255bd2-0ed7-41d0-a987-474d604e15b6" />
-        <range start1="79" end1="84" start2="100" end2="105" changelist="88255bd2-0ed7-41d0-a987-474d604e15b6" />
-        <range start1="88" end1="100" start2="109" end2="111" changelist="88255bd2-0ed7-41d0-a987-474d604e15b6" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/src/BestFirst.java">
-      <ranges>
-        <range start1="52" end1="52" start2="52" end2="63" changelist="90890bc3-c2b8-4727-bc82-527e021bdd28" />
-        <range start1="59" end1="60" start2="70" end2="86" changelist="88255bd2-0ed7-41d0-a987-474d604e15b6" />
-      </ranges>
-    </file>
-    <file path="$PROJECT_DIR$/src/PuzzleUnitTest.java">
-      <ranges>
-        <range start1="45" end1="45" start2="45" end2="48" changelist="88255bd2-0ed7-41d0-a987-474d604e15b6" />
-        <range start1="47" end1="49" start2="50" end2="51" changelist="88255bd2-0ed7-41d0-a987-474d604e15b6" />
-        <range start1="50" end1="50" start2="52" end2="63" changelist="90890bc3-c2b8-4727-bc82-527e021bdd28" />
-        <range start1="52" end1="52" start2="65" end2="70" changelist="90890bc3-c2b8-4727-bc82-527e021bdd28" />
-      </ranges>
-    </file>
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -58,57 +38,96 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "Downloaded.Files.Path.Enabled": "false",
-    "JUnit.PuzzleUnitTest.executor": "Run",
-    "JUnit.PuzzleUnitTest.testG.executor": "Run",
-    "JUnit.PuzzleUnitTest.testIsGoal.executor": "Run",
-    "JUnit.PuzzleUnitTest.testListChildren.executor": "Run",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;JUnit.ContainersTest.children.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ContainersTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ContainersTest.getG.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ContainersTest.isGoal.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ContainersTest.testConstructor1.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ContainersTest.testConstructor2.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ContainersTest.testEquals.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ContainersTest.testIsGoal.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ContainersTest.testToString1.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PuzzleUnitTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PuzzleUnitTest.testG.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PuzzleUnitTest.testIsGoal.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PuzzleUnitTest.testListChildren.executor&quot;: &quot;Run&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;create.test.in.the.same.root&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
-  <component name="RunManager">
-    <configuration name="PuzzleUnitTest.testG" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+}</component>
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.ContainersTest">
+    <configuration name="ContainersTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="IAProjeto1" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="PuzzleUnitTest" />
-      <option name="METHOD_NAME" value="testG" />
+      <option name="MAIN_CLASS_NAME" value="ContainersTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ContainersTest.children" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="IAProjeto1" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="ContainersTest" />
+      <option name="METHOD_NAME" value="children" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PuzzleUnitTest.testIsGoal" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ContainersTest.getG" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="IAProjeto1" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="PuzzleUnitTest" />
+      <option name="MAIN_CLASS_NAME" value="ContainersTest" />
+      <option name="METHOD_NAME" value="getG" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ContainersTest.isGoal" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="IAProjeto1" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="ContainersTest" />
+      <option name="METHOD_NAME" value="isGoal" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ContainersTest.testIsGoal" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="IAProjeto1" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="ContainersTest" />
       <option name="METHOD_NAME" value="testIsGoal" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PuzzleUnitTest.testListChildren" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="IAProjeto1" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="PuzzleUnitTest" />
-      <option name="METHOD_NAME" value="testListChildren" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -116,9 +135,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.PuzzleUnitTest.testG" />
-        <item itemvalue="JUnit.PuzzleUnitTest.testListChildren" />
-        <item itemvalue="JUnit.PuzzleUnitTest.testIsGoal" />
+        <item itemvalue="JUnit.ContainersTest" />
+        <item itemvalue="JUnit.ContainersTest.isGoal" />
+        <item itemvalue="JUnit.ContainersTest.getG" />
+        <item itemvalue="JUnit.ContainersTest.children" />
+        <item itemvalue="JUnit.ContainersTest.testIsGoal" />
       </list>
     </recent_temporary>
   </component>
@@ -141,11 +162,45 @@
       <workItem from="1726343517794" duration="849000" />
       <workItem from="1726477031622" duration="166000" />
       <workItem from="1726518849775" duration="6040000" />
-      <workItem from="1726565803993" duration="5762000" />
+      <workItem from="1726565803993" duration="5791000" />
+      <workItem from="1726868869404" duration="794000" />
+      <workItem from="1727039656154" duration="1809000" />
+      <workItem from="1727186208682" duration="8177000" />
+      <workItem from="1727222064849" duration="5000" />
+      <workItem from="1727251852844" duration="4064000" />
+      <workItem from="1727258962898" duration="16935000" />
+      <workItem from="1727427556861" duration="135000" />
+      <workItem from="1727427760794" duration="144000" />
+      <workItem from="1727774458835" duration="220000" />
+      <workItem from="1727786086878" duration="8043000" />
+      <workItem from="1727799471680" duration="3351000" />
+      <workItem from="1727812802539" duration="5392000" />
+      <workItem from="1727860971789" duration="421000" />
+      <workItem from="1727880380527" duration="5391000" />
+      <workItem from="1727954224718" duration="344000" />
+      <workItem from="1727981008954" duration="9590000" />
+      <workItem from="1728031140511" duration="13106000" />
+      <workItem from="1728125374504" duration="10408000" />
+      <workItem from="1728239262252" duration="629000" />
+      <workItem from="1728293037259" duration="1957000" />
+      <workItem from="1728329618438" duration="1405000" />
+      <workItem from="1728396952262" duration="1835000" />
+      <workItem from="1728495960917" duration="1704000" />
+      <workItem from="1728512333125" duration="29000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.IndexOutOfBoundsException" package="java.lang" />
+          <option name="timeStamp" value="6" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
