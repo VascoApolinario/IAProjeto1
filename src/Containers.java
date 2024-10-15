@@ -146,7 +146,9 @@ public class Containers implements Ilayout,Cloneable{
         return containerCosts;
     }
 
-    public double misplacedContainers(Containers goal){
+    @Override
+    public double getH(Ilayout l){
+        Containers goal = (Containers)l;
         int h = 0;
         for(int i = 0; i < this.stacks.size();i++){
             if(i >= goal.stacks.size()){ //quando existem mais colunas de stack no current do que no goal.

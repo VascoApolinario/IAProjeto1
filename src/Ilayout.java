@@ -20,5 +20,11 @@ public interface Ilayout {
      */
     double getG();
 
+    /**
+     *
+     * @return the estimated movement cost to reach the goal
+     */
+    double getH(Ilayout l);
+
 
 }

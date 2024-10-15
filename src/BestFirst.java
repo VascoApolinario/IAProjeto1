@@ -65,7 +65,7 @@ public class BestFirst {
 
     public double ManhattanDistance(State current, State goal){
         double g = current.getG();
-        double h = 0;
+        double h = current.layout.getH(goal.layout);
         return g + h;
     }
 
