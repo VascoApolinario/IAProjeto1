@@ -16,7 +16,7 @@ public class Containers implements Ilayout,Cloneable{
      * @param str string
      */
     public Containers(String str){
-        String[] splitedString = str.toUpperCase().split(" "); //Recebe string e separa-a em tokens por cada espaço
+        String[] splitedString = str.split(" "); //Recebe string e separa-a em tokens por cada espaço
         this.stacks = new ArrayList<>();
         this.containerCosts = new HashMap<>();
         Pattern pattern = Pattern.compile("([A-Z])(\\d+)"); //Classe Pattern é usada para definir um padrão. A regular expression "([A-Z])(\\d+)" é compilada em pattern.
