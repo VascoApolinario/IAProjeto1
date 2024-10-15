@@ -146,6 +146,30 @@ public class Containers implements Ilayout,Cloneable{
         return containerCosts;
     }
 
+    public double misplacedContainers(Containers goal){
+        int h = 0;
+        for(int i = 0; i < this.stacks.size();i++){
+            if(i >= goal.stacks.size()){ //quando existem mais colunas de stack no current do que no goal.
+                h += this.stacks.get(i).size();    //adiciona a h o size de cada stack a mais.
+            }
+            else
+            {
+                for(int j = 0; j < this.stacks.get(i).size(); j++){
+                    if(j >= goal.stacks.get(i).size() ){ //quando o current tem mais containers na stack do que o goal
+                        h += this.stacks.get(i).size() - j; //adiciona a h o size - j e da break
+                        break;
+                    }
+                    if(!this.stacks.get(i).get(j).equals(goal.stacks.get(i).get(j))){ //quando o char no indice do current e diferente do no goal
+                        h += this.stacks.get(i).size() - j; //adiciona a h o size - j e da break
+                        break;
+                    }
+                }
+            }
+
+        }
+        return h;
+    }
+
 
     @Override
     protected Containers clone() throws CloneNotSupportedException {

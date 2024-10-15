@@ -39,6 +39,7 @@ public class BestFirst {
         }
     }
 
+
     final private List<State> sucessores(State n){
         List<State> sucs = new ArrayList<>();
         List<Ilayout> children = n.layout.children();
@@ -62,6 +63,12 @@ public class BestFirst {
         return ancestors.iterator();
     }
 
+    public double ManhattanDistance(State current, State goal){
+        double g = current.getG();
+        double h = 0;
+        return g + h;
+    }
+
     final public Iterator<State> solve(Ilayout s, Ilayout goal){
         objective = goal;
         abertos = new PriorityQueue<>(10,(s1,s2) -> (int) Math.signum(s1.getG() - s2.getG()));
@@ -70,6 +77,7 @@ public class BestFirst {
         abertos.add(new State(s, null));
         abertosMap.put(s, abertos.peek());
         List<State> sucs;
+
         while(!abertos.isEmpty())
         {
             actual = abertos.remove();
