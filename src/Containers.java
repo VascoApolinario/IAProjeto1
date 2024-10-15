@@ -10,6 +10,7 @@ public class Containers implements Ilayout,Cloneable{
     private List<List<Character>> stacks;
     private final HashMap<Character,Integer> containerCosts;
     private int energycost;
+    private int nrContainers;
 
     /**
      * Construtor da classe Containers
@@ -19,6 +20,7 @@ public class Containers implements Ilayout,Cloneable{
         String[] splitedString = str.split(" "); //Recebe string e separa-a em tokens por cada espaço
         this.stacks = new ArrayList<>();
         this.containerCosts = new HashMap<>();
+        nrContainers = 0;
         Pattern pattern = Pattern.compile("([A-Z])(\\d+)"); //Classe Pattern é usada para definir um padrão. A regular expression "([A-Z])(\\d+)" é compilada em pattern.
                                                                  //os parênteses servem para criar grupos. grupo(1) = [A-Z] -> letra de A a Z , grupo(2) = \\d+ -> um ou mais digitos
         for(String s : splitedString){
@@ -30,11 +32,13 @@ public class Containers implements Ilayout,Cloneable{
                     int containerCost = Integer.parseInt(matcher.group(2)); //peso do contentor
                     this.containerCosts.put(containerLetter, containerCost); //adiciona no hashmap a key = letra contentor, value = peso contentor
                     containerStack.add(containerLetter); //adiciona à stack a letra de contentor.
+                    nrContainers++;
                 }
             }
             else{ //Se não conter digitos adiciona apenas os chars à stack.
                 for(char c : s.toCharArray()){
                     containerStack.add(c);
+                    nrContainers++;
                 }
             }
             insertInOrder(containerStack);
@@ -169,6 +173,12 @@ public class Containers implements Ilayout,Cloneable{
             }
 
         }
+        return h;
+    }
+
+    public double getHandre(Ilayout l){
+        Containers goal = (Containers)l;
+        int h = 0;
         return h;
     }
 
