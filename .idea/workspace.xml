@@ -7,8 +7,11 @@
     <list default="true" id="88255bd2-0ed7-41d0-a987-474d604e15b6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IAProjeto1/Board.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IAProjeto1/Board.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IAProjeto1/Containers.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IAProjeto1/Containers.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IAProjeto1/ContainersTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IAProjeto1/ContainersTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Board.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Containers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Containers.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ContainersTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ContainersTest.java" afterDir="false" />
     </list>
     <list id="b850625a-8dbe-4a2f-95af-b68c9ec2bce0" name="Changes by NIGGERNIGGERNIGGER" comment="" />
     <list id="90890bc3-c2b8-4727-bc82-527e021bdd28" name="Changes by User" comment="" />
@@ -16,9 +19,6 @@
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="CodyActiveAccount">
-    <option name="activeAccountId" value="52ea6c63-bb6b-4296-9a49-e9bf3f213bef" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -31,9 +31,6 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="MarkdownSettingsMigration">
-    <option name="stateVersion" value="1" />
-  </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 3
@@ -43,43 +40,44 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;JUnit.ContainersTest.children.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ContainersTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ContainersTest.getG.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ContainersTest.isGoal.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ContainersTest.testConstructor1.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ContainersTest.testConstructor2.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ContainersTest.testEquals.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ContainersTest.testIsGoal.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ContainersTest.testToString1.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.PuzzleUnitTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.PuzzleUnitTest.testG.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.PuzzleUnitTest.testIsGoal.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.PuzzleUnitTest.testListChildren.executor&quot;: &quot;Run&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;create.test.in.the.same.root&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Astar&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "Downloaded.Files.Path.Enabled": "false",
+    "JUnit.ContainersTest.children.executor": "Run",
+    "JUnit.ContainersTest.executor": "Run",
+    "JUnit.ContainersTest.getG.executor": "Run",
+    "JUnit.ContainersTest.getH.executor": "Run",
+    "JUnit.ContainersTest.isGoal.executor": "Run",
+    "JUnit.ContainersTest.testConstructor1.executor": "Run",
+    "JUnit.ContainersTest.testConstructor2.executor": "Run",
+    "JUnit.ContainersTest.testEquals.executor": "Run",
+    "JUnit.ContainersTest.testIsGoal.executor": "Run",
+    "JUnit.ContainersTest.testToString1.executor": "Run",
+    "JUnit.PuzzleUnitTest.executor": "Run",
+    "JUnit.PuzzleUnitTest.testG.executor": "Run",
+    "JUnit.PuzzleUnitTest.testIsGoal.executor": "Run",
+    "JUnit.PuzzleUnitTest.testListChildren.executor": "Run",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "create.test.in.the.same.root": "true",
+    "git-widget-placeholder": "Astar",
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -88,7 +86,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.ContainersTest.getH">
     <configuration name="ContainersTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="IAProjeto1" />
       <option name="PACKAGE_NAME" value="" />
@@ -118,6 +116,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ContainersTest.getH" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="IAProjeto1" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="ContainersTest" />
+      <option name="METHOD_NAME" value="getH" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ContainersTest.isGoal" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="IAProjeto1" />
       <option name="PACKAGE_NAME" value="" />
@@ -128,23 +136,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ContainersTest.testIsGoal" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="IAProjeto1" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="ContainersTest" />
-      <option name="METHOD_NAME" value="testIsGoal" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ContainersTest.getH" />
         <item itemvalue="JUnit.ContainersTest" />
         <item itemvalue="JUnit.ContainersTest.isGoal" />
         <item itemvalue="JUnit.ContainersTest.getG" />
         <item itemvalue="JUnit.ContainersTest.children" />
-        <item itemvalue="JUnit.ContainersTest.testIsGoal" />
       </list>
     </recent_temporary>
   </component>

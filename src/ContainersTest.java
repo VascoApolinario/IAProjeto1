@@ -91,4 +91,17 @@ class ContainersTest {
             assertEquals(1,child.getG());
         }
     }
+
+    @Test
+    void getH(){
+        Containers c1 = new Containers("A1B1D1E1 C1F1G1 H1 I1");
+        Containers goal1 = new Containers("A1B1H1 C1F1G1 I1E1D1");
+        assertEquals(4,c1.getH(goal1));
+        Containers c2 = new Containers("A37B12 C2 D4");
+        Containers goal2 = new Containers("D4 C2 A37B12");
+        assertEquals(0,c2.getH(goal2));
+        Containers c3 = new Containers("AB C D");
+        Containers goal3 = new Containers("BA D C");
+        assertEquals(2,c3.getH(goal3));
+    }
 }

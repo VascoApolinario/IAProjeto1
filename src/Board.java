@@ -61,10 +61,6 @@ public class Board implements Ilayout, Cloneable{
         return Arrays.deepHashCode(board);
     }
 
-    @Override
-    public double getH(Ilayout l) {
-        return 0;
-    }
 
     @Override
     public List<Ilayout> children() {
@@ -124,5 +120,10 @@ public class Board implements Ilayout, Cloneable{
     @Override
     public double getG() {
         return 1;
+    }
+
+    @Override
+    public double getH(Ilayout l) {
+        return 0;
     }
 }
