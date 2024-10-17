@@ -150,31 +150,102 @@ public class Containers implements Ilayout,Cloneable{
         return containerCosts;
     }
 
+    //Nesta heuristica h é igual ao numero de conteiners fora de sitio
     @Override
     public double getH(Ilayout l){
-        Containers goal = (Containers)l;
         int h = 0;
-        for(int i = 0; i < this.stacks.size();i++){
-            if(i >= goal.stacks.size()){ //quando existem mais colunas de stack no current do que no goal.
-                h += this.stacks.get(i).size();    //adiciona a h o size de cada stack a mais.
+        Containers goal = (Containers)l;
+        Map<Character, List<Character>> goalStacks = new HashMap<>();
+        for (List<Character> goalstack : goal.stacks) {
+            goalStacks.put(goalstack.getFirst(), goalstack);
+        }
+        for(List<Character> stack : this.stacks){
+            if(!goalStacks.containsKey(stack.getFirst())){
+                h += stack.size();
             }
-            else
-            {
-                for(int j = 0; j < this.stacks.get(i).size(); j++){
-                    if(j >= goal.stacks.get(i).size() ){ //quando o current tem mais containers na stack do que o goal
-                        h += this.stacks.get(i).size() - j; //adiciona a h o size - j e da break
+            else{
+                List<Character> goalstack = goalStacks.get(stack.getFirst());
+                for(int i = 0; i < stack.size(); i++){
+                    if(i >= goalstack.size() ){ //quando o current tem mais containers na stack do que o goal
+                        h += stack.size() - i; //adiciona a h o size - i e da break
                         break;
                     }
-                    if(!this.stacks.get(i).get(j).equals(goal.stacks.get(i).get(j))){ //quando o char no indice do current e diferente do no goal
-                        h += this.stacks.get(i).size() - j; //adiciona a h o size - j e da break
+                    if(!stack.get(i).equals(goalstack.get(i))){ //quando o char no indice do current e diferente do no goal
+                        h += stack.size() - i; //adiciona a h o size - i e da break
                         break;
                     }
                 }
             }
-
         }
         return h;
     }
+
+
+    //Nesta heuristica h e igual à soma de todos os custos dos containers fora do sitio
+    public double getH2(Ilayout l){
+        int h = 0;
+        Containers goal = (Containers)l;
+        Map<Character, List<Character>> goalStacks = new HashMap<>();
+        for (List<Character> goalstack : goal.stacks) {
+            goalStacks.put(goalstack.getFirst(), goalstack);
+        }
+        for(List<Character> stack : this.stacks){
+            if(!goalStacks.containsKey(stack.getFirst())){
+                for(Character c : stack){
+                    h += this.containerCosts.get(c);
+                }
+            }
+            else{
+                List<Character> goalstack = goalStacks.get(stack.getFirst());
+                boolean misplacedStackFound = false;
+                for(int i = 0; i < stack.size(); i++){
+                    if(i >= goalstack.size() || !stack.get(i).equals(goalstack.get(i))){ //quando o current tem mais containers na stack do que o goal ou quando o char no indice do current e diferente no goal
+                        misplacedStackFound = true;
+                    }
+                    if(misplacedStackFound){
+                        h += this.containerCosts.get(stack.get(i)); //adiciona o custo de cada conteiner errado
+                    }
+                }
+            }
+        }
+        return h;
+    }
+
+    //Nesta heuristica tentamos prever as movimentações que cada stack irá ter de fazer. posição certa h += 0; colocada na stack errada h += g; na stack certa mas posição errada h += 2*g
+    public double getH3(Ilayout l){
+        int h = 0;
+        Containers goal = (Containers)l;
+        Map<Character, List<Character>> goalStacks = new HashMap<>();
+        for (List<Character> goalstack : goal.stacks) {
+            goalStacks.put(goalstack.getFirst(), goalstack);
+        }
+        for(List<Character> stack : this.stacks){
+            if(!goalStacks.containsKey(stack.getFirst())){
+                for(Character c : stack){
+                    h += this.containerCosts.get(c);
+                }
+            }
+            else{
+                List<Character> goalstack = goalStacks.get(stack.getFirst());
+                boolean misplacedStackFound = false;
+                for(int i = 0; i < stack.size(); i++){
+                    if(i >= goalstack.size() || !stack.get(i).equals(goalstack.get(i))){ //quando o current tem mais containers na stack do que o goal ou quando o char no indice do current e diferente no goal
+                        misplacedStackFound = true;
+                    }
+                    if(misplacedStackFound){
+                        if(goalstack.contains(stack.get(i))){ //Arraylist.contains() tem complexidade temporal O(n) source:gpt
+                            h += 2*this.containerCosts.get(stack.get(i)); //se o container se encontra na stack certa mas na posição errada (ou alguma stack abaixo está errada) irá de ser movida no mínimo 2 vezes (uma para sair da stack e outra para voltar a ser colocada na posição certa)
+                        }
+                        else{
+                            h += this.containerCosts.get(stack.get(i)); //se o container se encontra na stack errada irá de ser movida no mínimo 1 vezes
+                        }
+                    }
+                }
+            }
+        }
+        return h;
+    }
+
 
     public double getHandre(Ilayout l){
         Containers goal = (Containers)l;

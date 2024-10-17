@@ -5,12 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="88255bd2-0ed7-41d0-a987-474d604e15b6" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/IAProjeto1/Board.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IAProjeto1/Board.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/IAProjeto1/Containers.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IAProjeto1/Containers.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IAProjeto1/ContainersTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IAProjeto1/ContainersTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Board.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/BestFirst.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BestFirst.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Containers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Containers.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ContainersTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ContainersTest.java" afterDir="false" />
     </list>
     <list id="b850625a-8dbe-4a2f-95af-b68c9ec2bce0" name="Changes by NIGGERNIGGERNIGGER" comment="" />
@@ -48,6 +47,8 @@
     "JUnit.ContainersTest.executor": "Run",
     "JUnit.ContainersTest.getG.executor": "Run",
     "JUnit.ContainersTest.getH.executor": "Run",
+    "JUnit.ContainersTest.getH2.executor": "Run",
+    "JUnit.ContainersTest.getH3.executor": "Run",
     "JUnit.ContainersTest.isGoal.executor": "Run",
     "JUnit.ContainersTest.testConstructor1.executor": "Run",
     "JUnit.ContainersTest.testConstructor2.executor": "Run",
@@ -86,7 +87,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ContainersTest.getH">
+  <component name="RunManager" selected="JUnit.ContainersTest.getH3">
     <configuration name="ContainersTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="IAProjeto1" />
       <option name="PACKAGE_NAME" value="" />
@@ -96,31 +97,31 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ContainersTest.children" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="IAProjeto1" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="ContainersTest" />
-      <option name="METHOD_NAME" value="children" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ContainersTest.getG" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="IAProjeto1" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="ContainersTest" />
-      <option name="METHOD_NAME" value="getG" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="ContainersTest.getH" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="IAProjeto1" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="ContainersTest" />
       <option name="METHOD_NAME" value="getH" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ContainersTest.getH2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="IAProjeto1" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="ContainersTest" />
+      <option name="METHOD_NAME" value="getH2" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ContainersTest.getH3" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="IAProjeto1" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="ContainersTest" />
+      <option name="METHOD_NAME" value="getH3" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -138,11 +139,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ContainersTest.getH3" />
+        <item itemvalue="JUnit.ContainersTest.getH2" />
         <item itemvalue="JUnit.ContainersTest.getH" />
         <item itemvalue="JUnit.ContainersTest" />
         <item itemvalue="JUnit.ContainersTest.isGoal" />
-        <item itemvalue="JUnit.ContainersTest.getG" />
-        <item itemvalue="JUnit.ContainersTest.children" />
       </list>
     </recent_temporary>
   </component>
@@ -191,6 +192,8 @@
       <workItem from="1728495960917" duration="1704000" />
       <workItem from="1728512333125" duration="29000" />
       <workItem from="1728980919361" duration="6900000" />
+      <workItem from="1728999253735" duration="9644000" />
+      <workItem from="1729192767164" duration="7018000" />
     </task>
     <servers />
   </component>

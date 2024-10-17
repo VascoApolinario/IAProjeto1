@@ -10,13 +10,18 @@ public class BestFirst {
         private Ilayout layout;
         private State father;
         private double g;
+        private double h;
+        private double f;
 
-        public State(Ilayout l, State n) {
+        public State(Ilayout l, State n, Ilayout goal) {
             layout = l;
             father = n;
             if(father != null)
                 g = father.g + l.getG();
+
             else g = 0.0;
+            h = l.getH(goal);
+            f = g + h;
         }
 
         public String toString() {
@@ -24,6 +29,10 @@ public class BestFirst {
         }
 
         public double getG() {return g;}
+
+        public double getH() {return h;}
+
+        public double getF() {return f;}
 
         @Override
         public boolean equals(Object o) {
@@ -45,7 +54,7 @@ public class BestFirst {
         List<Ilayout> children = n.layout.children();
         for(Ilayout e : children){
             if(n.father == null || !e.equals(n.father.layout)){
-                State nn = new State(e,n);
+                State nn = new State(e,n,objective);
                 sucs.add(nn);
             }
         }
@@ -63,18 +72,13 @@ public class BestFirst {
         return ancestors.iterator();
     }
 
-    public double ManhattanDistance(State current, State goal){
-        double g = current.getG();
-        double h = current.layout.getH(goal.layout);
-        return g + h;
-    }
 
     final public Iterator<State> solve(Ilayout s, Ilayout goal){
         objective = goal;
         abertos = new PriorityQueue<>(10,(s1,s2) -> (int) Math.signum(s1.getG() - s2.getG()));
         Map<Ilayout,State> abertosMap = new HashMap<>();
         fechados = new HashMap<>();
-        abertos.add(new State(s, null));
+        abertos.add(new State(s, null,objective));
         abertosMap.put(s, abertos.peek());
         List<State> sucs;
 
