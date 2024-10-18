@@ -10,7 +10,7 @@ public class Containers implements Ilayout,Cloneable{
     private List<List<Character>> stacks;
     private final HashMap<Character,Integer> containerCosts;
     private int energycost;
-    private int nrContainers;
+
 
     /**
      * Construtor da classe Containers
@@ -20,8 +20,7 @@ public class Containers implements Ilayout,Cloneable{
         String[] splitedString = str.split(" "); //Recebe string e separa-a em tokens por cada espaço
         this.stacks = new ArrayList<>();
         this.containerCosts = new HashMap<>();
-        nrContainers = 0;
-        Pattern pattern = Pattern.compile("([A-Z])(\\d+)"); //Classe Pattern é usada para definir um padrão. A regular expression "([A-Z])(\\d+)" é compilada em pattern.
+        Pattern pattern = Pattern.compile("([a-zA-Z])(\\d+)"); //Classe Pattern é usada para definir um padrão. A regular expression "([A-Z])(\\d+)" é compilada em pattern.
                                                                  //os parênteses servem para criar grupos. grupo(1) = [A-Z] -> letra de A a Z , grupo(2) = \\d+ -> um ou mais digitos
         for(String s : splitedString){
             List<Character> containerStack = new ArrayList<>(); //vai criando uma stack para cada token
@@ -32,13 +31,11 @@ public class Containers implements Ilayout,Cloneable{
                     int containerCost = Integer.parseInt(matcher.group(2)); //peso do contentor
                     this.containerCosts.put(containerLetter, containerCost); //adiciona no hashmap a key = letra contentor, value = peso contentor
                     containerStack.add(containerLetter); //adiciona à stack a letra de contentor.
-                    nrContainers++;
                 }
             }
             else{ //Se não conter digitos adiciona apenas os chars à stack.
                 for(char c : s.toCharArray()){
                     containerStack.add(c);
-                    nrContainers++;
                 }
             }
             insertInOrder(containerStack);
@@ -150,7 +147,9 @@ public class Containers implements Ilayout,Cloneable{
         return containerCosts;
     }
 
-    //Nesta heuristica h é igual ao numero de conteiners fora de sitio
+
+    /*
+    //H1 - Nesta heuristica h é igual ao numero de conteiners fora de sitio
     @Override
     public double getH(Ilayout l){
         int h = 0;
@@ -178,11 +177,12 @@ public class Containers implements Ilayout,Cloneable{
             }
         }
         return h;
-    }
+    }*/
 
-
-    //Nesta heuristica h e igual à soma de todos os custos dos containers fora do sitio
-    public double getH2(Ilayout l){
+    /*
+    //H2 - Nesta heuristica h e igual à soma de todos os custos dos containers fora do sitio
+    @Override
+    public double getH(Ilayout l){
         int h = 0;
         Containers goal = (Containers)l;
         Map<Character, List<Character>> goalStacks = new HashMap<>();
@@ -209,10 +209,10 @@ public class Containers implements Ilayout,Cloneable{
             }
         }
         return h;
-    }
-
-    //Nesta heuristica tentamos prever as movimentações que cada stack irá ter de fazer. posição certa h += 0; colocada na stack errada h += g; na stack certa mas posição errada h += 2*g
-    public double getH3(Ilayout l){
+    }*/
+    //H3 - Nesta heuristica tentamos prever as movimentações que cada stack irá ter de fazer. posição certa h += 0; colocada na stack errada h += g; na stack certa mas posição errada h += 2*g
+    @Override
+    public double getH(Ilayout l){
         int h = 0;
         Containers goal = (Containers)l;
         Map<Character, List<Character>> goalStacks = new HashMap<>();

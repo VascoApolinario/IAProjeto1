@@ -75,17 +75,17 @@ public class BestFirst {
 
     final public Iterator<State> solve(Ilayout s, Ilayout goal){
         objective = goal;
-        abertos = new PriorityQueue<>(10,(s1,s2) -> (int) Math.signum(s1.getG() - s2.getG()));
+        abertos = new PriorityQueue<>(10,(s1,s2) -> (int) Math.signum(s1.getF() - s2.getF()));
         Map<Ilayout,State> abertosMap = new HashMap<>();
         fechados = new HashMap<>();
         abertos.add(new State(s, null,objective));
         abertosMap.put(s, abertos.peek());
         List<State> sucs;
-
         while(!abertos.isEmpty())
         {
             actual = abertos.remove();
             if (actual.layout.isGoal(objective)) {
+                //System.out.println(fechados.size());
                 return getLineage(actual);
             }
             else {

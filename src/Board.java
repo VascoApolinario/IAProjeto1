@@ -126,4 +126,5 @@ public class Board implements Ilayout, Cloneable{
     public double getH(Ilayout l) {
         return 0;
     }
+
 }
