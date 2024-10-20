@@ -34,6 +34,8 @@ public class BestFirst {
 
         public double getF() {return f;}
 
+        public Ilayout getLayout() {return layout;}
+
         @Override
         public boolean equals(Object o) {
             if (this == o) return true;
@@ -73,7 +75,7 @@ public class BestFirst {
     }
 
 
-    final public Iterator<State> solve(Ilayout s, Ilayout goal){
+    final public State solve(Ilayout s, Ilayout goal){
         objective = goal;
         abertos = new PriorityQueue<>(10,(s1,s2) -> (int) Math.signum(s1.getF() - s2.getF()));
         Map<Ilayout,State> abertosMap = new HashMap<>();
@@ -86,7 +88,7 @@ public class BestFirst {
             actual = abertos.remove();
             if (actual.layout.isGoal(objective)) {
                 //System.out.println(fechados.size());
-                return getLineage(actual);
+                return actual;
             }
             else {
                 if (!fechados.containsKey(actual.layout)) {

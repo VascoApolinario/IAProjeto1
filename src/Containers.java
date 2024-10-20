@@ -148,38 +148,6 @@ public class Containers implements Ilayout,Cloneable{
     }
 
 
-    /*
-    //H1 - Nesta heuristica h é igual ao numero de conteiners fora de sitio
-    @Override
-    public double getH(Ilayout l){
-        int h = 0;
-        Containers goal = (Containers)l;
-        Map<Character, List<Character>> goalStacks = new HashMap<>();
-        for (List<Character> goalstack : goal.stacks) {
-            goalStacks.put(goalstack.getFirst(), goalstack);
-        }
-        for(List<Character> stack : this.stacks){
-            if(!goalStacks.containsKey(stack.getFirst())){
-                h += stack.size();
-            }
-            else{
-                List<Character> goalstack = goalStacks.get(stack.getFirst());
-                for(int i = 0; i < stack.size(); i++){
-                    if(i >= goalstack.size() ){ //quando o current tem mais containers na stack do que o goal
-                        h += stack.size() - i; //adiciona a h o size - i e da break
-                        break;
-                    }
-                    if(!stack.get(i).equals(goalstack.get(i))){ //quando o char no indice do current e diferente do no goal
-                        h += stack.size() - i; //adiciona a h o size - i e da break
-                        break;
-                    }
-                }
-            }
-        }
-        return h;
-    }*/
-
-    /*
     //H2 - Nesta heuristica h e igual à soma de todos os custos dos containers fora do sitio
     @Override
     public double getH(Ilayout l){
@@ -209,7 +177,8 @@ public class Containers implements Ilayout,Cloneable{
             }
         }
         return h;
-    }*/
+    }
+    /*
     //H3 - Nesta heuristica tentamos prever as movimentações que cada stack irá ter de fazer. posição certa h += 0; colocada na stack errada h += g; na stack certa mas posição errada h += 2*g
     @Override
     public double getH(Ilayout l){
@@ -219,10 +188,22 @@ public class Containers implements Ilayout,Cloneable{
         for (List<Character> goalstack : goal.stacks) {
             goalStacks.put(goalstack.getFirst(), goalstack);
         }
+
         for(List<Character> stack : this.stacks){
             if(!goalStacks.containsKey(stack.getFirst())){
                 for(Character c : stack){
-                    h += this.containerCosts.get(c);
+                    if(goalStacks.containsKey(c)){
+                        h += this.containerCosts.get(c);
+                    }
+                    else{
+                        for(List<Character> goalstack : goalStacks.values()){
+                            if(goalstack.contains(c)){
+                                h += this.containerCosts.get(c);
+                                break;
+                            }
+                        }
+                    }
+
                 }
             }
             else{
@@ -233,7 +214,7 @@ public class Containers implements Ilayout,Cloneable{
                         misplacedStackFound = true;
                     }
                     if(misplacedStackFound){
-                        if(goalstack.contains(stack.get(i))){ //Arraylist.contains() tem complexidade temporal O(n) source:gpt
+                        if(goalstack.contains(stack.get(i))){ //Arraylist.contains() tem complexidade temporal O(n)
                             h += 2*this.containerCosts.get(stack.get(i)); //se o container se encontra na stack certa mas na posição errada (ou alguma stack abaixo está errada) irá de ser movida no mínimo 2 vezes (uma para sair da stack e outra para voltar a ser colocada na posição certa)
                         }
                         else{
@@ -244,7 +225,8 @@ public class Containers implements Ilayout,Cloneable{
             }
         }
         return h;
-    }
+    }*/
+
 
 
     public double getHandre(Ilayout l){
