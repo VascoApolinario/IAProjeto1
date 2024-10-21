@@ -6,17 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="88255bd2-0ed7-41d0-a987-474d604e15b6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IAProjeto1/Astar.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/IAProjeto1/BestFirst$State.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IAProjeto1/BestFirst$State.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/IAProjeto1/BestFirst.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IAProjeto1/BestFirst.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/IAProjeto1/Containers.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IAProjeto1/Containers.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IAProjeto1/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IAProjeto1/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/IAProjeto1/ContainersTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IAProjeto1/ContainersTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/BestFirst.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/BestFirst.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Board.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Board.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Containers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Containers.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ContainersTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ContainersTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Ilayout.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Ilayout.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <list id="b850625a-8dbe-4a2f-95af-b68c9ec2bce0" name="Changes by NIGGERNIGGERNIGGER" comment="" />
     <list id="90890bc3-c2b8-4727-bc82-527e021bdd28" name="Changes by User" comment="" />
@@ -94,7 +89,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.ContainersTest.getH2">
     <configuration name="ContainersTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="IAProjeto1" />
       <option name="PACKAGE_NAME" value="" />
@@ -146,9 +141,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ContainersTest.getH2" />
         <item itemvalue="JUnit.ContainersTest.getH" />
         <item itemvalue="JUnit.ContainersTest.getH3" />
-        <item itemvalue="JUnit.ContainersTest.getH2" />
         <item itemvalue="JUnit.ContainersTest" />
         <item itemvalue="JUnit.ContainersTest.isGoal" />
       </list>

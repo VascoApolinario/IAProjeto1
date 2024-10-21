@@ -158,20 +158,23 @@ public class Containers implements Ilayout,Cloneable{
             goalStacks.put(goalstack.getFirst(), goalstack);
         }
         for(List<Character> stack : this.stacks){
-            if(!goalStacks.containsKey(stack.getFirst())){
+            Character firstContainer = stack.getFirst();
+            if(!goalStacks.containsKey(firstContainer)){
                 for(Character c : stack){
                     h += this.containerCosts.get(c);
                 }
             }
             else{
-                List<Character> goalstack = goalStacks.get(stack.getFirst());
+                List<Character> goalstack = goalStacks.get(firstContainer);
                 boolean misplacedStackFound = false;
+                Character currentContainer;
                 for(int i = 0; i < stack.size(); i++){
-                    if(i >= goalstack.size() || !stack.get(i).equals(goalstack.get(i))){ //quando o current tem mais containers na stack do que o goal ou quando o char no indice do current e diferente no goal
+                    currentContainer = stack.get(i);
+                    if(!misplacedStackFound && (i >= goalstack.size() || !currentContainer.equals(goalstack.get(i)))){ //quando o current tem mais containers na stack do que o goal ou quando o char no indice do current e diferente no goal
                         misplacedStackFound = true;
                     }
                     if(misplacedStackFound){
-                        h += this.containerCosts.get(stack.get(i)); //adiciona o custo de cada conteiner errado
+                        h += this.containerCosts.get(currentContainer); //adiciona o custo de cada conteiner errado
                     }
                 }
             }

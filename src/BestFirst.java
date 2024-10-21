@@ -46,7 +46,9 @@ public class BestFirst {
 
         @Override
         public int hashCode() {
-            return toString().hashCode();
+            int hash = 7;
+            hash = 59 * hash + toString().hashCode();
+            return hash;
         }
     }
 
