@@ -91,22 +91,7 @@ class ContainersTest {
             assertEquals(1,child.getG());
         }
     }
-/*
-    @Test
-    void getH(){
-        Containers c1 = new Containers("A1B1D1E1 C1F1G1 H1 I1");
-        Containers goal1 = new Containers("ABH CFG IED");
-        assertEquals(3,c1.getH(goal1));
-        Containers c2 = new Containers("A1B1 C1 D1 F1G1 J1I1H1");
-        Containers goal2 = new Containers("ACDB FGI JH");
-        assertEquals(5,c2.getH(goal2));
-        Containers c3 = new Containers("A1B1C1D1E1 F1 G1J1");
-        Containers goal3 = new Containers("AJ B C D EF G");
-        assertEquals(6,c3.getH(goal3));
-        Containers c4 = new Containers("C1D1 A1B1");
-        Containers goal4 = new Containers("AB CD");
-        assertEquals(0,c4.getH(goal4));
-    }*/
+
 /*
     @Test
     void getH2(){
@@ -122,7 +107,7 @@ class ContainersTest {
         Containers c4 = new Containers("C2D3 A5B6");
         Containers goal4 = new Containers("AB CD");
         assertEquals(0,c4.getH2(goal4));
-    }
+    }*/
 
     @Test
     void getH3(){
@@ -132,10 +117,14 @@ class ContainersTest {
         Containers goal3 = new Containers("CAB D");
         Containers goal4 = new Containers("CBAD");
         Containers goal5 = new Containers("BCA D");
-        assertEquals(3,c1.getH3(goal1));
-        assertEquals(8,c1.getH3(goal2));
-        assertEquals(10,c1.getH3(goal3));
-        assertEquals(1,c1.getH3(goal4));
-        assertEquals(6,c1.getH3(goal5)); //ATENÇÂO NESTE CASO 
-    }*/
+        Containers c6 = new Containers("A1B2C3 D4E5F6 G7H8I9");
+        Containers goal6 = new Containers("IFC BEH AG D");
+        assertEquals(40,c6.getH(goal6));
+        assertEquals(3,c1.getH(goal1));
+        //assertEquals(8,c1.getH(goal2));
+        //assertEquals(10,c1.getH(goal3));
+        assertEquals(1,c1.getH(goal4));
+        assertEquals(9,c1.getH(goal5));
+
+    }
 }
