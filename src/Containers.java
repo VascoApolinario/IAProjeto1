@@ -159,40 +159,43 @@ public class Containers implements Ilayout,Cloneable{
         }
         for(List<Character> stack : this.stacks){
             if(!goalStacks.containsKey(stack.getFirst())){
-                h += naoSeiDarNomeAFuncao(0,stack,goalStacks);
+                h += evaluateWrongContainers(0,stack,goalStacks);
             }
             else{
                 List<Character> goalstack = goalStacks.get(stack.getFirst());
-                boolean misplacedStackFound = false;
                 for(int i = 0; i < stack.size(); i++){
                     if(i >= goalstack.size() || !stack.get(i).equals(goalstack.get(i))){
-                        h += naoSeiDarNomeAFuncao(i,stack,goalStacks);
+                        if(goalstack.contains(stack.get(i))){
+                            h += this.containerCosts.get(stack.get(i));
+                        }
+                        h += evaluateWrongContainers(i,stack,goalStacks);
                         break;
                     }
-                    /*
-                    if(misplacedStackFound){
-                        h += this.containerCosts.get(stack.get(i)); //adiciona o custo de cada conteiner errado
-                    }*/
                 }
             }
         }
         return h;
     }
 
-    public double naoSeiDarNomeAFuncao(int start, List<Character> stack, Map<Character,List<Character>> goalstacks){
+    public double evaluateWrongContainers(int start, List<Character> stack, Map<Character,List<Character>> goalstacks){
         double h = 0;
         Set<Character> charsBelow = new HashSet<>();
         Set<Character> charsBelowGoal;
         char containerOnIndex;
+        char containerBase = stack.getFirst();
+        boolean shouldBeAbove;
         for(int i = start ; i < stack.size(); i++){
             containerOnIndex = stack.get(i);
             charsBelowGoal = new HashSet<>();
+            shouldBeAbove = false;
             if(i > start) {
                 charsBelow.add(stack.get(i-1));
 
                 for (List<Character> goalstack : goalstacks.values()) {
                     if (goalstack.contains(containerOnIndex)) {
-
+                        if(containerBase == goalstack.getFirst()){
+                            shouldBeAbove = true;
+                        }
                         charsBelowGoal.addAll(goalstack.subList(0,goalstack.indexOf(containerOnIndex)));
                     }
                 }
@@ -200,7 +203,11 @@ public class Containers implements Ilayout,Cloneable{
                 Set<Character> intersection = new HashSet<>(charsBelow);
                 intersection.retainAll(charsBelowGoal);
                 if (intersection.isEmpty()) {
-                    h += this.containerCosts.get(containerOnIndex);
+                    if(shouldBeAbove)
+                        h += 2*this.containerCosts.get(containerOnIndex);
+                    else
+                        h += this.containerCosts.get(containerOnIndex);
+
                 } else {
                     h += 2 * this.containerCosts.get(containerOnIndex);
                 }

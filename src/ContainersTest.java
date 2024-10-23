@@ -119,10 +119,10 @@ class ContainersTest {
         Containers goal5 = new Containers("BCA D");
         Containers c6 = new Containers("A1B2C3 D4E5F6 G7H8I9");
         Containers goal6 = new Containers("IFC BEH AG D");
+        assertEquals(10,c1.getH(goal3));
         assertEquals(40,c6.getH(goal6));
         assertEquals(3,c1.getH(goal1));
-        //assertEquals(8,c1.getH(goal2));
-        //assertEquals(10,c1.getH(goal3));
+        assertEquals(8,c1.getH(goal2));
         assertEquals(1,c1.getH(goal4));
         assertEquals(9,c1.getH(goal5));
 

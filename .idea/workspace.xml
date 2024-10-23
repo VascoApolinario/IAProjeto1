@@ -5,14 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="88255bd2-0ed7-41d0-a987-474d604e15b6" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IAProjeto1/BestFirst$State.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IAProjeto1/BestFirst$State.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IAProjeto1/BestFirst.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IAProjeto1/BestFirst.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IAProjeto1/Board.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IAProjeto1/Board.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/IAProjeto1/Containers.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IAProjeto1/Containers.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/IAProjeto1/ContainersTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IAProjeto1/ContainersTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/IAProjeto1/Ilayout.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/IAProjeto1/Ilayout.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Containers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Containers.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/ContainersTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ContainersTest.java" afterDir="false" />
     </list>
@@ -208,7 +203,9 @@
       <workItem from="1729192767164" duration="7436000" />
       <workItem from="1729263238462" duration="13462000" />
       <workItem from="1729421473596" duration="5431000" />
-      <workItem from="1729604121334" duration="9042000" />
+      <workItem from="1729604121334" duration="10627000" />
+      <workItem from="1729676155727" duration="18000" />
+      <workItem from="1729712649199" duration="2856000" />
     </task>
     <servers />
   </component>
@@ -222,6 +219,20 @@
           <properties class="java.lang.IndexOutOfBoundsException" package="java.lang" />
           <option name="timeStamp" value="6" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/Containers.java</url>
+          <line>220</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/Containers.java</url>
+          <line>179</line>
+          <properties class="Containers" method="naoSeiDarNomeAFuncao">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
