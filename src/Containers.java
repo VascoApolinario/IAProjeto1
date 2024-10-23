@@ -3,14 +3,15 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 /**
- * @author Diogo Almeida 79810
+ * Classe que representa um conjunto de pilhas de containers
+ * @author Diogo Almeida 79810, Andre Guerreiro 79809, Vasco Apolinario 79944
+ * @version 1
  */
 public class Containers implements Ilayout,Cloneable{
 
     private List<List<Character>> stacks;
     private final HashMap<Character,Integer> containerCosts;
     private int energycost;
-
 
     /**
      * Construtor da classe Containers
@@ -21,12 +22,12 @@ public class Containers implements Ilayout,Cloneable{
         this.stacks = new ArrayList<>();
         this.containerCosts = new HashMap<>();
         Pattern pattern = Pattern.compile("([a-zA-Z])(\\d+)"); //Classe Pattern é usada para definir um padrão. A regular expression "([A-Z])(\\d+)" é compilada em pattern.
-                                                                 //os parênteses servem para criar grupos. grupo(1) = [A-Z] -> letra de A a Z , grupo(2) = \\d+ -> um ou mais digitos
+                                                                 //os parenteses servem para criar grupos. grupo(1) = [A-Z] -> letra de A a Z , grupo(2) = \\d+ -> um ou mais digitos
         for(String s : splitedString){
             List<Character> containerStack = new ArrayList<>(); //vai criando uma stack para cada token
-            if (s.matches(".*\\d.*")) { //Verifica se a string contém digitos. Se conter vai à procura do padrão.
-                Matcher matcher = pattern.matcher(s); //Classe Matcher é usada para procurar os padrões na string
-                while (matcher.find()) {   //enquanto o padrão for encontrado
+            if (s.matches(".*\\d.*")) { //Verifica se a string contem digitos. Se conter vai à procura do padrao.
+                Matcher matcher = pattern.matcher(s); //Classe Matcher é usada para procurar os padroes na string
+                while (matcher.find()) {   //enquanto o padrao for encontrado
                     char containerLetter = matcher.group(1).charAt(0); //char que identifica o contentor
                     int containerCost = Integer.parseInt(matcher.group(2)); //peso do contentor
                     this.containerCosts.put(containerLetter, containerCost); //adiciona no hashmap a key = letra contentor, value = peso contentor
@@ -40,17 +41,16 @@ public class Containers implements Ilayout,Cloneable{
             }
             insertInOrder(containerStack);
         }
-        //newStacks.sort((s1, s2) -> Character.compare(s1.getFirst(), s2.getFirst()));
         this.energycost = 0;
     }
 
     /**
      * Metodo que insere uma nova stack de containers de maneira a manter por ordem alfabetica em relação ao container no chão.
-     * @param newStack nova stack de conteiners que se quer inserir no conjunto de stacks de conteiners
+     * @param newStack nova stack de containers que se quer inserir no conjunto de stacks de containers
      */
     private void insertInOrder(List<Character> newStack) {
         for (int i = 0; i < stacks.size(); i++) {
-            if (Character.compare(stacks.get(i).getFirst(), newStack.getFirst()) > 0) {
+            if (stacks.get(i).getFirst() > newStack.getFirst()) {
                 stacks.add(i, newStack);
                 return;
             }
@@ -58,7 +58,11 @@ public class Containers implements Ilayout,Cloneable{
         stacks.add(newStack);
     }
 
-
+    /**
+     * Metodo equals da classe Containers
+     * @param o objeto
+     * @return true se for igual false se não
+     */
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -72,7 +76,10 @@ public class Containers implements Ilayout,Cloneable{
         return this.stacks.equals(that.stacks);
     }
 
-
+    /**
+     * Metodo hashCode da classe Containers
+     * @return hash
+     */
     @Override
     public int hashCode() {
         int hash = 7;
@@ -81,6 +88,10 @@ public class Containers implements Ilayout,Cloneable{
         return hash;
     }
 
+    /**
+     * Metodo toString da classe Containers
+     * @return string
+     */
     @Override
     public String toString(){
         StringBuilder s = new StringBuilder();
@@ -91,7 +102,10 @@ public class Containers implements Ilayout,Cloneable{
         return s.toString();
     }
 
-
+    /**
+     * Metodo children da classe Containers
+     * @return nos filhos
+     */
     @Override
     public List<Ilayout> children() {
         List<Ilayout> children=new ArrayList<>();
@@ -133,22 +147,38 @@ public class Containers implements Ilayout,Cloneable{
         return children;
     }
 
+    /**
+     * Metodo isGoal da classe Containers
+     * @param l interface Ilayout
+     * @return true se for o goal, false se nao
+     */
     @Override
     public boolean isGoal(Ilayout l) {
         return this.equals(l);
     }
 
+    /**
+     * Metodo getG da classe Containers
+      * @return custo
+     */
     @Override
     public double getG() {
         return energycost;
     }
 
-
+    /**
+     * Getter do atributo containerCosts
+     * @return containerCosts
+     */
     public HashMap<Character, Integer> getContainerCosts() {
         return containerCosts;
     }
 
-    //H2 - Nesta heuristica h e igual à soma de todos os custos dos containers fora do sitio
+    /**
+     * Metodo getH da classe Containers
+     * @param l interface Ilayout
+     * @return heuristica h
+     */
     @Override
     public double getH(Ilayout l){
         double h = 0;
@@ -177,6 +207,13 @@ public class Containers implements Ilayout,Cloneable{
         return h;
     }
 
+    /**
+     * Metodo que calcula a heuristica com base no custo de movimentacao dos Containers na posição errada e os seus movimentos minimos necessarios numa stack.
+     * @param start indice do primeiro containers errado encontrado na stack (debaixo para cima).
+     * @param stack stack onde foi encontrado o containers errado.
+     * @param goalstacks stacks do objetivo a ser alcancado
+     * @return h
+     */
     public double evaluateWrongContainers(int start, List<Character> stack, Map<Character,List<Character>> goalstacks){
         double h = 0;
         Set<Character> charsBelow = new HashSet<>();
@@ -220,56 +257,11 @@ public class Containers implements Ilayout,Cloneable{
         return h;
     }
 
-
-
-
-    /*
-    //H3 - Nesta heuristica tentamos prever as movimentações que cada stack irá ter de fazer. posição certa h += 0; colocada na stack errada h += g; na stack certa mas posição errada h += 2*g
-    public double getH3(Ilayout l){
-        int h = 0;
-        Containers goal = (Containers)l;
-        Map<Character, List<Character>> goalStacks = new HashMap<>();
-        Map<Character, List<Character>> thisStacks = new HashMap<>();
-        for (List<Character> goalstack : goal.stacks) {
-            goalStacks.put(goalstack.getFirst(), goalstack);
-        }
-        for (List<Character> stack : stacks) {
-            thisStacks.put(stack.getFirst(), stack);
-        }
-        for(List<Character> stack : this.stacks){
-            if(!goalStacks.containsKey(stack.getFirst())){
-                for(Character c : stack){
-                    h += this.containerCosts.get(c);
-                }
-            }
-            else{
-                List<Character> goalstack = goalStacks.get(stack.getFirst()); //aqui estamos a trabalhar
-                boolean misplacedStackFound = false;
-                for(int i = 0; i < stack.size(); i++){
-                    if(i >= goalstack.size() || !stack.get(i).equals(goalstack.get(i))){ //quando o current tem mais containers na stack do que o goal ou quando o char no indice do current e diferente no goal
-                        misplacedStackFound = true;
-                    }
-                    if(misplacedStackFound){
-                        if(goalstack.contains(stack.get(i))){ //Arraylist.contains() tem complexidade temporal O(n) source:gpt
-                            h += 2*this.containerCosts.get(stack.get(i)); //se o container se encontra na stack certa mas na posição errada (ou alguma stack abaixo está errada) irá de ser movida no mínimo 2 vezes (uma para sair da stack e outra para voltar a ser colocada na posição certa)
-                        }
-                        else{
-                            h += this.containerCosts.get(stack.get(i)); //se o container se encontra na stack errada irá de ser movida no mínimo 1 vezes
-                        }
-                    }
-                }
-            }
-        }
-        return h;
-    }
-
-    
-    @Override
-    public double getH(Ilayout l)
-    {
-        return Double.max(getH2(l),getH3(l));
-    }*/
-
+    /**
+     * Metodo clone da classe Containers
+     * @return clone
+     * @throws CloneNotSupportedException cloning is not supported
+     */
     @Override
     protected Containers clone() throws CloneNotSupportedException {
             Containers clone = (Containers) super.clone();

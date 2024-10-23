@@ -92,25 +92,8 @@ class ContainersTest {
         }
     }
 
-/*
     @Test
-    void getH2(){
-        Containers c1 = new Containers("A1B1D5E3 C1F1G1 H2 I1");
-        Containers goal1 = new Containers("ABH CFG IED");
-        assertEquals(10,c1.getH2(goal1));
-        Containers c2 = new Containers("A1B2 C2 D2 F1G1 J1I10H8");
-        Containers goal2 = new Containers("ACDB FGI JH");
-        assertEquals(24,c2.getH2(goal2));
-        Containers c3 = new Containers("A5B5C5D5E5 F5 G5J5");
-        Containers goal3 = new Containers("AJ B C D EF G");
-        assertEquals(30,c3.getH2(goal3));
-        Containers c4 = new Containers("C2D3 A5B6");
-        Containers goal4 = new Containers("AB CD");
-        assertEquals(0,c4.getH2(goal4));
-    }*/
-
-    @Test
-    void getH3(){
+    void getH(){
         Containers c1 = new Containers("C1B2A3 D1");
         Containers goal1 = new Containers("CB DA");
         Containers goal2 = new Containers("CA DB");

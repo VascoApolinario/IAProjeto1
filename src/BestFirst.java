@@ -13,6 +13,12 @@ public class BestFirst {
         private double h;
         private double f;
 
+        /**
+         * Construtor da classe State
+         * @param l interface Ilayout
+         * @param n estado pai
+         * @param goal interface Ilayout do objetivo
+         */
         public State(Ilayout l, State n, Ilayout goal) {
             layout = l;
             father = n;
@@ -24,18 +30,31 @@ public class BestFirst {
             f = g + h;
         }
 
+        /**
+         * Metodo toString da classe State
+         * @return string
+         */
         public String toString() {
             return layout.toString();
         }
 
-        public double getG() {return g;}
-
-        public double getH() {return h;}
-
+        /**
+         * Metodo que retorna a função de custo total
+         * @return f
+         */
         public double getF() {return f;}
 
+        /**
+         * Getter do atributo layout
+         * @return layout
+         */
         public Ilayout getLayout() {return layout;}
 
+        /**
+         * Metodo equals da classe State
+         * @param o objeto
+         * @return true se for igual, false se nao
+         */
         @Override
         public boolean equals(Object o) {
             if (this == o) return true;
@@ -44,6 +63,10 @@ public class BestFirst {
             return this.layout.equals(n.layout);
         }
 
+        /**
+         * Metodo hashCode da classe State
+         * @return hashcode
+         */
         @Override
         public int hashCode() {
             return toString().hashCode();
@@ -74,6 +97,16 @@ public class BestFirst {
         return ancestors.iterator();
     }
 
+    public int getDepth(State goalState) {
+        int depth = 0;
+        State current = goalState;
+        while (current.father != null) {
+            depth++;
+            current = current.father;
+        }
+        return depth;
+    }
+
 
     final public State solve(Ilayout s, Ilayout goal){
         objective = goal;
@@ -87,7 +120,7 @@ public class BestFirst {
         {
             actual = abertos.remove();
             if (actual.layout.isGoal(objective)) {
-                //System.out.println(fechados.size());
+                //System.out.println("\n|Resultado|\nNós Expandidos: " + fechados.size() + "\nNós Gerados: " + (fechados.size() + abertos.size()) + "\nComprimento da solução: " + getDepth(actual) + "\nPenetrância: " + (double) getDepth(actual) / fechados.size() + "\n");
                 return actual;
             }
             else {
