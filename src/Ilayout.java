@@ -1,5 +1,10 @@
 import java.util.List;
 
+/**
+ * Interface Ilayout que contem os metodos que as classes que implementam esta interface devem ter
+ * @author  Diogo Almeida 79810, Andre Guerreiro 79809, Vasco Apolinario 79944
+ * @version 1
+ */
 public interface Ilayout {
 
     /**
@@ -25,8 +30,5 @@ public interface Ilayout {
      * @return the estimated movement cost to reach the goal
      */
     double getH(Ilayout l);
-
-
-
 
 }

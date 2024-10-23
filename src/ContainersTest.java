@@ -8,8 +8,16 @@ import java.util.Stack;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+/**
+ * Classe ContainersTest que testa a classe Containers
+ * @author Diogo Almeida 79810, Andre Guerreiro 79809, Vasco Apolinario 79944
+ * @version 1
+ */
 class ContainersTest {
 
+    /**
+     * Testa o construtor da classe Containers
+     */
     @Test
     public void testConstructor1() {
         Containers c1 = new Containers("C1 A1B1");
@@ -27,6 +35,9 @@ class ContainersTest {
         assertEquals( "{A=1, B=1, C=1, D=1, E=2, F=2}",c4.getContainerCosts().toString());
     }
 
+    /**
+     * Testa o construtor da classe Containers
+     */
     @Test
     public void testConstructor2() {
         Containers c1 = new Containers("A B C");
@@ -41,6 +52,9 @@ class ContainersTest {
         assertTrue(c3.getContainerCosts().isEmpty());
     }
 
+    /**
+     * Testa o toString da classe Containers
+     */
     @Test
     public  void testToString1(){
         Containers c1 = new Containers("A37B12 C2 D4");
@@ -50,6 +64,9 @@ class ContainersTest {
     }
 
 
+    /**
+     * Testa o metodo children() da classe Containers
+     */
     @Test
     void children() {
         Containers c1 = new Containers("A1B1 C1");
@@ -64,6 +81,9 @@ class ContainersTest {
 
     }
 
+    /**
+     * Testa o metodo isGoal da classe Containers
+     */
     @Test
     void isGoal() {
         Containers c1 = new Containers("A37B12 C2 D4");
@@ -78,6 +98,9 @@ class ContainersTest {
         assertFalse(c1.isGoal(c5));
     }
 
+    /**
+     * Testa o metodo getG da classe Containers
+     */
     @Test
     void getG() {
         Containers c1 = new Containers("A1B1");
@@ -92,6 +115,9 @@ class ContainersTest {
         }
     }
 
+    /**
+     * Testa o metodo getH da classe Containers (heuristica)
+     */
     @Test
     void getH(){
         Containers c1 = new Containers("C1B2A3 D1");

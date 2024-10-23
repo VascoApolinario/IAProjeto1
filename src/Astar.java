@@ -1,6 +1,11 @@
 import java.util.*;
 
-public class BestFirst {
+/**
+ * Classe Astar
+ * @author Diogo Almeida 79810, Andre Guerreiro 79809, Vasco Apolinario 79944
+ * @version 1
+ */
+public class Astar {
     protected Queue<State> abertos;
     private Map<Ilayout,State> fechados;
     private State actual;
@@ -73,7 +78,11 @@ public class BestFirst {
         }
     }
 
-
+    /**
+     * Metodo que retorna os sucessores de um estado
+     * @param n estado
+     * @return lista de estados
+     */
     final private List<State> sucessores(State n){
         List<State> sucs = new ArrayList<>();
         List<Ilayout> children = n.layout.children();
@@ -86,6 +95,11 @@ public class BestFirst {
         return sucs;
     }
 
+    /**
+     * Metodo que retorna o caminho de um estado ate ao estado inicial
+     * @param a estado
+     * @return iterador
+     */
     public Iterator<State> getLineage(State a) {
         List<State> ancestors = new ArrayList<>();
         while(a.father != null) {
@@ -97,6 +111,11 @@ public class BestFirst {
         return ancestors.iterator();
     }
 
+    /**
+     * Metodo que retorna a profundidade de um estado
+     * @param goalState estado objetivo
+     * @return profundidade
+     */
     public int getDepth(State goalState) {
         int depth = 0;
         State current = goalState;
@@ -108,6 +127,12 @@ public class BestFirst {
     }
 
 
+    /**
+     * Metodo que resolve o problema com o algoritmo A*
+     * @param s estado inicial
+     * @param goal estado objetivo
+     * @return estado
+     */
     final public State solve(Ilayout s, Ilayout goal){
         objective = goal;
         abertos = new PriorityQueue<>(10,(s1,s2) -> (int) Math.signum(s1.getF() - s2.getF()));
